@@ -1,8 +1,8 @@
-f = open('input.txt')
+f = open('../txtf/input3.txt')
 n = int(f.readline())
 f.close()
 
-f = open('output.txt', 'w')
+f = open('../txtf/output3.txt', 'w')
 f0, f1 = 0, 1
 if 0 <= n <= 1:
     f.write(str(n))
