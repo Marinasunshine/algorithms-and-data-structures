@@ -3,6 +3,12 @@ a, b = f.readline().split()
 f.close()
 
 n = len(a)
+
+if not 1 <= n <= 10**3:
+    with open('../txtf/output.txt', 'w') as f:
+        f.write('Число не входит в диапазон')
+    exit()
+
 carry = 0
 c = ['0'] * (n + 1)
 
