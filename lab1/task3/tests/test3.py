@@ -21,12 +21,12 @@ for element in a:
         exit()
 
 for i in range(1, n):
-    key = a[i]
+    curr_el = a[i]
     j = i - 1
-    while j >= 0 and a[j] < key:
+    while j >= 0 and a[j] < curr_el:
         a[j + 1] = a[j]
         j -= 1
-    a[j + 1] = key
+    a[j + 1] = curr_el
 
 f = open('../txtf/output.txt', 'w')
 f.write(' '.join(map(str, a)))
