@@ -11,7 +11,7 @@ f.close()
 bin_sum = bin(int(a, 2) + int(b, 2))[2:]
 
 f = open('../txtf/output.txt', 'w')
-f.write(bin_sum)
+f.write(''.join(c).lstrip('0') or '0')
 f.close()
 
 print(time.perf_counter() - start, 'c')
