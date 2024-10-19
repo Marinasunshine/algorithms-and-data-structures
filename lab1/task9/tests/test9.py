@@ -30,4 +30,4 @@ f.write(''.join(c).lstrip('0') or '0')
 f.close()
 
 print(time.perf_counter() - start, 'c')
-print(tracemalloc.get_traced_memory()[0] / 1024, 'Mb')
+print(tracemalloc.get_traced_memory()[1] / 1024 / 1024, 'Mb')

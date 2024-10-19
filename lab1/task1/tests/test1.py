@@ -29,9 +29,10 @@ def insertion_sort(a):
             j -= 1
         a[j + 1] = curr_el
 
+insertion_sort(a)
 f = open('../txtf/output.txt', 'w')
 f.write(' '.join(map(str, a)))
 f.close()
 
 print(time.perf_counter() - start, 'c')
-print(tracemalloc.get_traced_memory()[0] / 1024, 'Mb')
+print(tracemalloc.get_traced_memory()[1] / 1024 / 1024, 'Mb')
