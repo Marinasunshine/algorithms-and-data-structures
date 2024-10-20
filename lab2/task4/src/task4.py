@@ -14,7 +14,7 @@ def binary_search(a, target):
     return -1
 
 def check_and_write(input_f, output_f):
-    with open(input_f, 'r') as f:
+    with open(input_f) as f:
         n = int(f.readline())
         a = list(map(int, f.readline().split()))
         k = int(f.readline())
@@ -40,7 +40,7 @@ def check_and_write(input_f, output_f):
         if not (1 <= element <= 10 ** 9):
             with open(output_f, 'w') as f:
                 f.write('Число в массиве b превосходит допустимое значение')
-        return
+            return
 
 
     res = [binary_search(a, x) for x in b]

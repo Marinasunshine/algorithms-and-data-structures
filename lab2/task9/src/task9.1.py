@@ -36,11 +36,9 @@ def strassen(A, B):
 def check_and_write(input_f, output_f):
     with open(input_f) as f:
         n = int(f.readline())
-
         A = []
         for i in range(n):
             A.append(list(map(int, f.readline().split())))
-
         B = []
         for i in range(n):
             B.append(list(map(int, f.readline().split())))

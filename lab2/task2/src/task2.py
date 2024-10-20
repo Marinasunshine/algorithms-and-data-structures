@@ -19,6 +19,7 @@ def merge(a, l, r, l_start, r_end, f):
 
     a[l_start:r_end + 1] = res
     f.write(f"{l_start + 1} {r_end + 1} {a[l_start]} {a[r_end]}\n")
+    return a
 
 def merge_sort(a, l, r, f):
     if l < r:
@@ -33,13 +34,13 @@ def check_and_write(input_f, output_f):
         n = int(f.readline())
         a = list(map(int, f.readline().split()))
 
-    if not 1 <= n <= 10**5:
+    if not (1 <= n <= 10 ** 5):
         with open(output_f, 'w') as f:
             f.write('Число не входит в диапазон')
         return
 
     for element in a:
-        if abs(element) > 10**9:
+        if abs(element) > 10 ** 9:
             with open(output_f, 'w') as f:
                 f.write('Число превосходит допустимое значение')
             return
