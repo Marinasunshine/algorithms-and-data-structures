@@ -17,8 +17,8 @@ def max_sub(a):
 
 def check_and_write(input_f, output_f):
     with open(input_f) as f:
-        n = int(f.readline().strip())
-        a = list(map(int, f.readline().strip().split()))
+        n = int(f.readline())
+        a = list(map(int, f.readline().split()))
 
     if not 1 <= n <= 2 * 10**4:
         with open(output_f, 'w') as f:
