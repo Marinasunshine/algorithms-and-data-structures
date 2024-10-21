@@ -48,4 +48,4 @@ def check_and_write(input_f, output_f):
         for r in C:
             f.write(' '.join(map(str, r)))
 
-check_and_write('../txtf/input.txt', '../txtf/output.txt')
+
