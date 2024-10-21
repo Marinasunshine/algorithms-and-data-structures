@@ -46,6 +46,6 @@ def check_and_write(input_f, output_f):
     C = strassen(A, B)
     with open(output_f, 'w') as f:
         for r in C:
-            f.write(' '.join(map(str, r)))
+            f.write(' '.join(map(str, r)) + "\n")
 
 
