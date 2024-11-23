@@ -42,9 +42,3 @@
    python tests/test.py
    ```
 
-
-## Тестирование
-Для запуска тестов выполните:
-```bash
-    python tests/test.py
-```
