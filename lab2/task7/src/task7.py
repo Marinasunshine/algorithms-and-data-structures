@@ -17,5 +17,3 @@ def max_sub(a):
         return [max(a)]
 
     return a[start:end + 1]
-
-
