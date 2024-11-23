@@ -29,25 +29,3 @@ def merge_sort(a, l, r, f):
         merge(a, a[l:mid + 1], a[mid + 1:r + 1], l, r, f)
     return a
 
-def check_and_write(input_f, output_f):
-    with open(input_f) as f:
-        n = int(f.readline())
-        a = list(map(int, f.readline().split()))
-
-    if not (1 <= n <= 10 ** 5):
-        with open(output_f, 'w') as f:
-            f.write('Число не входит в диапазон')
-        return
-
-    for element in a:
-        if abs(element) > 10 ** 9:
-            with open(output_f, 'w') as f:
-                f.write('Число превосходит допустимое значение')
-            return
-
-    with open(output_f, 'w') as f:
-        merge_sort(a, 0, n - 1, f)
-        f.write(' '.join(map(str, a)))
-
-
-check_and_write('../txtf/input.txt', '../txtf/output.txt')

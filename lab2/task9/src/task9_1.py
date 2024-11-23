@@ -32,20 +32,3 @@ def strassen(A, B):
         C[i][:mid], C[i][mid:], C[i + mid][:mid], C[i + mid][mid:] = C11[i], C12[i], C21[i], C22[i]
 
     return C
-
-def check_and_write(input_f, output_f):
-    with open(input_f) as f:
-        n = int(f.readline())
-        A = []
-        for i in range(n):
-            A.append(list(map(int, f.readline().split())))
-        B = []
-        for i in range(n):
-            B.append(list(map(int, f.readline().split())))
-
-    C = strassen(A, B)
-    with open(output_f, 'w') as f:
-        for r in C:
-            f.write(' '.join(map(str, r)) + "\n")
-
-

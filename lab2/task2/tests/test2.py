@@ -1,25 +1,39 @@
 import time
+import unittest
+from lab2.utils import *
 import tracemalloc
-import random
-from lab2.task2.src.task2 import *
+from lab2.task2.src.task2 import merge_sort
 
-def generate_random_array(low=-10**9, high=10**9):
-    n = 10
-    random_array = random.sample(range(low, high), n)
-    with open('../txtf/input.txt', 'w') as f:
-        f.write(f"{n}\n")
-        f.write(" ".join(map(str, random_array)))
+generations("random", 5, 0,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task2/txtf/input.txt")
 
-def time_and_memory(func, inp, outp):
-    start = time.perf_counter()
+def print_time_memory(func):
+    n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task2/txtf/input.txt")
+
     tracemalloc.start()
-    func(inp, outp)
-    memory = tracemalloc.get_traced_memory()[1]
+    start_time = time.time()
+
+    with open("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task2/txtf/output.txt", "w") as f:
+        func(data, 0, len(data) - 1, f)
+
+    print("memory usage task 2: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
+    print("--- %s seconds ---" % (time.time() - start_time))
+    print("\n")
+    memory = tracemalloc.get_traced_memory()[1] / 2**20
+    times = time.time() - start_time
+
     tracemalloc.stop()
-    end = time.perf_counter()
 
-    print(f"Время выполнения: {end - start} секунд")
-    print(f"Использование памяти: {memory / 1024 / 1024} MB")
+    write_data(data,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task2/txtf/output.txt")
 
-generate_random_array()
-time_and_memory(check_and_write, '../txtf/input.txt', '../txtf/output.txt')
+    return memory, times
+
+
+class TestTask(unittest.TestCase):
+
+    def test_should_check_time_memori_value(self):
+        expected_memory = 256
+        expected_time = 2
+        m, t = print_time_memory(merge_sort)
+
+        self.assertLessEqual(t, expected_time, f"Значение {t} превышает порог {expected_time}")
+        self.assertLessEqual(m, expected_memory, f"Значение {m} превышает порог {expected_memory}")

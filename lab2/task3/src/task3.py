@@ -27,28 +27,3 @@ def merge_sort(a):
     merged, split_inv = merge(l, r)
 
     return merged, l_inversions + r_inversions + split_inv
-
-
-def check_and_write(input_f, output_f):
-    with open(input_f) as f1:
-        n = int(f1.readline())
-        a = list(map(int, f1.readline().split()))
-
-    if not 1 <= n <= 10 ** 5:
-        with open(output_f, 'w') as f:
-            f.write('Число не входит в диапазон')
-        return
-
-    for element in a:
-        if abs(element) > 10 ** 9:
-            with open(output_f, 'w') as f:
-                f.write('Число превосходит допустимое значение')
-            return
-
-    merged, inversions = merge_sort(a)
-
-    with open(output_f, 'w') as f:
-        f.write(str(inversions))
-
-
-check_and_write('../txtf/input.txt', '../txtf/output.txt')

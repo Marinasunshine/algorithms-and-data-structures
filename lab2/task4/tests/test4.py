@@ -1,29 +1,43 @@
 import time
+import unittest
+from lab2.utils import *
 import tracemalloc
-import random
-from lab2.task4.src.task4 import *
+from lab2.task4.src.task4 import binary_search
 
-def generate_random_array(low=1, high=10**9):
-    n = 10
-    k = 10
-    random_array_n = random.choices(range(low, high), k = n)
-    random_array_k = random.choices(range(low, high), k = k)
-    with open('../txtf/input.txt', 'w') as f:
-        f.write(f"{n}\n")
-        f.write(" ".join(map(str, random_array_n)) + "\n")
-        f.write(f"{k}\n")
-        f.write(" ".join(map(str, random_array_k)) + "\n")
+generations("bin", 5, 5,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task4/txtf/input.txt")
 
-def time_and_memory(func, inp, outp):
-    start = time.perf_counter()
+def print_time_memory(func):
+    n, data, k, data2 = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task4/txtf/input.txt")
+
     tracemalloc.start()
-    func(inp, outp)
-    memory = tracemalloc.get_traced_memory()[1]
+    start_time = time.time()
+
+    res = [binary_search(data, x) for x in data2]
+
+    print("memory usage task 4: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
+    print("--- %s seconds ---" % (time.time() - start_time))
+    print("\n")
+    memory = tracemalloc.get_traced_memory()[1] / 2**20
+    times = time.time() - start_time
+
     tracemalloc.stop()
-    end = time.perf_counter()
 
-    print(f"Время выполнения: {end - start} секунд")
-    print(f"Использование памяти: {memory / 1024 / 1024} MB")
+    write_data(res, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task4/txtf/output.txt")
+    result = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task4/txtf/output.txt")
 
-generate_random_array()
-time_and_memory(check_and_write, '../txtf/input.txt', '../txtf/output.txt')
+    return memory, times, result
+
+
+class TestTask(unittest.TestCase):
+
+    def test_should_check_time_memori_value(self):
+        n, data, k, data2 = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task4/txtf/input.txt")
+        expected_result = [binary_search(data, x) for x in data2]
+        expected_memory = 256
+        expected_time = 2
+        m, t, result = print_time_memory(binary_search)
+
+        self.assertEqual(result, expected_result)
+        self.assertLessEqual(t, expected_time, f"Значение {t} превышает порог {expected_time}")
+        self.assertLessEqual(m, expected_memory, f"Значение {m} превышает порог {expected_memory}")
+
