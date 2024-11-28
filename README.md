@@ -1,8 +1,18 @@
 ## Практика по Алгоритмам и Cтруктурам Данных ИТМО
-Студентка ИТМО Заботкина Марина Александровна
+Студентка ИТМО Заботкина Марина Александровна 465908
 
 ### Описание
 Выполение лабораторных работ по дисциплине "Алгоритмы и структуры данных"
+
+### Лабораторные работы
+* 0 - [Введение. Работа с файлами, тестирование](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab0)
+* 1 - [Сортировка вставками, выбором, пузырьковая](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1)
+* 2 - [Сортировка слиянием. Метод декомпозиции](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2)
+* 3 - [Быстрая сортировка, сортировки за линейное время](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab3)
+* 4 - ...
+* 5 - ...
+* 6 - ...
+* 7 - ...
 
 ### Цели и задачи
 * Изучить основные алгоритмы сортировки, поиска и обработки данных
