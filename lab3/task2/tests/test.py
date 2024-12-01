@@ -4,13 +4,15 @@ from lab3.utils import *
 import tracemalloc
 from lab3.task2.src.task2 import generate_worst_case
 
-generation_random_n("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task2/txtf/input.txt")
+#generation_random_n("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task2/txtf/input.txt")
 
 def print_time_memory(func):
-    n = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task2/txtf/input.txt")
+    n = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task2/txtf/input.txt", 2)
 
     tracemalloc.start()
     start_time = time.time()
+
+    func(n)
 
     print("memory usage task 2: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))

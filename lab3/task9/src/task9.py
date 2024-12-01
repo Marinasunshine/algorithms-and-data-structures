@@ -6,7 +6,9 @@ def distance(point1, point2):
 
 def closest_pair(points_x, points_y):
     n = len(points_x)
-    if n <= 3:
+    if n == 1:
+        return 0
+    elif n <= 3:
         return min(distance(points_x[i], points_x[j])
                    for i in range(n) for j in range(i + 1, n))
 
