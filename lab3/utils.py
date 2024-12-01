@@ -1,29 +1,29 @@
 import random
 
 
-def read_data(p):
+def read_data(p, num):
     with open(p) as f:
-        lines = [list(map(int, line.strip().split())) for line in f.readlines() if line.strip()]
-
-    if len(lines) == 1 and len(lines[0]) == 1:
-        return lines[0][0]
-    if "," in lines[0] and len(lines[0]) > 1:
-        return list(map(int, lines[0]))
-    if len(lines) == 1 and len(lines[0]) > 1:
-        return list(map(int, lines[0]))
-
-    if len(lines[0]) == 1 and len(lines) > 1:
-        n = lines[0][0]
-        if len(lines[1]) == 2:
-            points = [tuple(map(int, line)) for line in lines[1:]]
-            return n, points
-        else:
-            arr = lines[1]
+        if num == 1:
+            n = int(f.readline())
+            arr = list(map(int, f.readline().split()))
             return n, arr
-    elif len(lines[0]) == 2:
-        n, k = lines[0]
-        arr = lines[1]
-        return n, k, arr
+        if num == 5:
+            arr = list(map(int, f.readline().split(',')))
+            return arr
+        if num == 2:
+            n = int(f.readline())
+            return n
+        if num == 9:
+            n = int(f.readline())
+            points = [(int(i.split()[0]), int(i.split()[1])) for i in f.readlines()]
+            return n, points
+        if num == 3:
+            n, k = map(int, f.readline().split())
+            arr = list(map(int, f.readline().split()))
+            return n, k, arr
+        if num == 0:
+            arr = list(map(int, f.readline().split()))
+            return arr
 
 def write_data(res, p):
     with open(p, "w", encoding='utf-8') as file:
@@ -46,7 +46,7 @@ def generations(case, n, k, inp):
     elif case == "h":
         a = [random.randint(0, 1000) for i in range(n)]
         with open(inp, "w") as file:
-            file.write(' '.join(map(str, a)) + '\n')
+            file.write(','.join(map(str, a)) + '\n')
         return a
     elif case == "points":
         points = [(random.randint(-10 ** 9, 10 ** 9), random.randint(-10 ** 9, 10 ** 9)) for i in range(n)]

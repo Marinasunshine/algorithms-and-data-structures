@@ -4,10 +4,10 @@ from lab3.utils import read_data, write_data, generations
 import tracemalloc
 from lab3.task1.src.task1 import randomized_quick_sort
 
-generations("random", 10**3, 0,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
+generations("random", 10**4, 0,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
 
 def print_time_memory(func):
-    n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
+    n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt", 1)
 
     tracemalloc.start()
     start_time = time.time()
@@ -23,7 +23,7 @@ def print_time_memory(func):
     tracemalloc.stop()
 
     write_data(data, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt")
-    result = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt")
+    result = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt", 0)
 
     return memory, times, result
 
@@ -31,7 +31,7 @@ def print_time_memory(func):
 class TestTask(unittest.TestCase):
 
     def test_should_check_time_memori_max_value(self):
-        n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
+        n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt", 1)
         expected_result = sorted(data)
         expected_memory = 256
         expected_time = 2
