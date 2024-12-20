@@ -4,7 +4,7 @@ from lab3.utils import *
 import tracemalloc
 from lab3.task5.src.task5 import h_index
 
-generations("h", 20, 0, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task5/txtf/input.txt")
+generations("h", 10, 0, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task5/txtf/input.txt")
 
 def print_time_memory(func):
     data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task5/txtf/input.txt", 5)
@@ -16,14 +16,15 @@ def print_time_memory(func):
 
     print("memory usage task 5: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
     memory = tracemalloc.get_traced_memory()[1] / 2**20
     times = time.time() - start_time
 
     tracemalloc.stop()
 
     write_data(func(data), "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task5/txtf/output.txt")
-
+    print(data)
+    print(func(data))
+    print("\n")
     return memory, times
 
 

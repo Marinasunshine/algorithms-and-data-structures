@@ -16,14 +16,15 @@ def print_time_memory(func):
 
     print("memory usage task 2: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
     memory = tracemalloc.get_traced_memory()[1] / 2**20
     times = time.time() - start_time
 
     tracemalloc.stop()
 
     write_data(func(n), "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task2/txtf/output.txt")
-
+    print(n)
+    print(func(n))
+    print("\n")
     return memory, times
 
 

@@ -4,7 +4,7 @@ from lab3.utils import *
 import tracemalloc
 from lab3.task3.src.task3 import scarecrow_sort
 
-generations("matreshka", 1, 1,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task3/txtf/input.txt")
+generations("matreshka", 2, 2,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task3/txtf/input.txt")
 
 def print_time_memory(func):
     n, k, matr = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task3/txtf/input.txt",3)
@@ -16,14 +16,15 @@ def print_time_memory(func):
 
     print("memory usage task 3: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
     memory = tracemalloc.get_traced_memory()[1] / 2**20
     times = time.time() - start_time
 
     tracemalloc.stop()
 
     write_data(func(n, k, matr), "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task3/txtf/output.txt")
-
+    print(n, k, matr)
+    print(func(n, k, matr))
+    print("\n")
     return memory, times
 
 
