@@ -4,9 +4,12 @@
 Целью лабораторной работы является изучение и практическая реализация основных алгоритмов сортировки, таких как сортировка выбором, сортировка вставками и пузырьковая сортировка. 
 
 ### Задачи ###
-1. Реализовать алгоритмы сортировки
-2. Проверить корректность работы на различных наборах данных
-3. Проанализировать поведение на разных типах данных и массивах разного размера
+* 1 - [Сортировка вставкой](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1/task1)
+* 3 - [Сортировка вставкой по убыванию](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1/task3)
+* 4 - [Линейный поиск](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1/task4)
+* 6 - [Пузырьковая сортировка](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1/task6)
+* 9 - [Сложение двоичных чисел](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1/task9)
+* 10 - [Палиндром](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1/task10)
 
 ### Структура проекта ###
 * src/ - исходный код + файл для генерации входных данных
@@ -22,7 +25,7 @@
    cd algorithms-and-data-structures/lab1
 4. Запустите программу
    ```bash
-   python src/task1.py (вместо единицы любое число из: 1, 3, 4, 6, 9, 10
+   python src/task.py
 
 ### Автор ###
    Заботкина Марина Александровна
