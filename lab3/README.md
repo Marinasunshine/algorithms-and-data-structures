@@ -4,9 +4,11 @@
 Целью данной лабораторной работы является изучение метода "Разделяй и властвуй" на примере быстрой сортировки, а также знакомство с сортировками, работающими за линейное время.
 
 ### Задачи ###
-1. Реализовать алгоритмы сортировки
-2. Проверить корректность работы на различных наборах данных
-3. Проанализировать поведение на разных типах данных и массивах разного размера
+* 1 - [Улучшение Quick sort](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab3/task1)
+* 2 - [Анти-quick sort](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab3/task2)
+* 3 - [Сортировка пугалом](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab3/task3)
+* 5 - [Индекс Хирша](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab3/task5)
+* 9 - [Ближайшие точки](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab3/task9)
 
 ### Структура проекта ###
 * src/ - исходный код
