@@ -9,10 +9,10 @@
 * 1 - [Сортировка вставками, выбором, пузырьковая](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab1)
 * 2 - [Сортировка слиянием. Метод декомпозиции](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2)
 * 3 - [Быстрая сортировка, сортировки за линейное время](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab3)
-* 4 - ...
-* 5 - ...
-* 6 - ...
-* 7 - ...
+* 4 - [Стек, очередь, связанный список](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab4)
+* 5 - [Деревья. Пирамида, пирамидальная сортировка. Очередь с приоритетами](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab5)
+* 6 - [Хеширование. Хеш-таблицы](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab6)
+* 7 - [Динамическое программирование](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab7)
 
 ### Цели и задачи
 * Изучить основные алгоритмы сортировки, поиска и обработки данных
