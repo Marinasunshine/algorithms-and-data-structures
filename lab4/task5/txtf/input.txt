@@ -1,0 +1,6 @@
+5
+push 90073
+max
+pop
+push 73124
+max

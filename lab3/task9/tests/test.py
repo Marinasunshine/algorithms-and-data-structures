@@ -4,7 +4,7 @@ from lab3.utils import *
 import tracemalloc
 from lab3.task9.src.task9 import find_closest_pair
 
-#generations("points", 1, 0, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task9/txtf/input.txt")
+#generations("points", 5, 0, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task9/txtf/input.txt")
 
 def print_time_memory(func):
     n, points = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task9/txtf/input.txt",9)
@@ -16,14 +16,15 @@ def print_time_memory(func):
 
     print("memory usage task 9: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
     memory = tracemalloc.get_traced_memory()[1] / 2**20
     times = time.time() - start_time
 
     tracemalloc.stop()
 
     write_data(func(points), "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task9/txtf/output.txt")
-
+    print(n, points)
+    print(func(points))
+    print("\n")
     return memory, times
 
 

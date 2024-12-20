@@ -12,9 +12,10 @@ def print_time_memory(func):
     tracemalloc.start()
     start_time = time.time()
 
+    func(data)
+
     print("memory usage task 1: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
     memory = tracemalloc.get_traced_memory()[1] / 2**20
     times = time.time() - start_time
 
@@ -22,7 +23,9 @@ def print_time_memory(func):
 
     write_data(func(data), "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task1/txtf/output.txt")
     result = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab2/task1/txtf/output.txt")
-
+    print(n, data)
+    print(func(data))
+    print("\n")
     return memory, times, result
 
 
@@ -45,3 +48,6 @@ class TestTask(unittest.TestCase):
         self.assertEqual(merge_sort([1, 3, 0]), [0, 1, 3])
         self.assertEqual(merge_sort([0, 0, 0]), [0, 0, 0])
         self.assertEqual(merge_sort([5, 4, 3, 2, 1]), [1, 2, 3, 4, 5])
+
+if __name__ == "__main__":
+    unittest.main()

@@ -4,10 +4,10 @@ from lab3.utils import *
 import tracemalloc
 from lab3.task1.src.task1 import randomized_quick_sort_best
 
-generations("random", 10**4, 0, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
+generations("random", 5, 0, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
 
 def print_time_memory(func):
-    n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
+    n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt", 1)
 
     tracemalloc.start()
     start_time = time.time()
@@ -16,22 +16,22 @@ def print_time_memory(func):
 
     print("memory usage task 1_1: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
     memory = tracemalloc.get_traced_memory()[1] / 2**20
     times = time.time() - start_time
 
     tracemalloc.stop()
 
     write_data(data, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt")
-    result = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt")
-
+    result = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt", 0)
+    print(data)
+    print("\n")
     return memory, times, result
 
 
 class TestTask(unittest.TestCase):
 
     def test_should_check_time_memori_value(self):
-        n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
+        n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt",1)
         expected_result = sorted(data)
         expected_memory = 256
         expected_time = 2

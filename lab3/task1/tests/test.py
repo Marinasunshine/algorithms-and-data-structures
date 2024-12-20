@@ -4,7 +4,7 @@ from lab3.utils import read_data, write_data, generations
 import tracemalloc
 from lab3.task1.src.task1 import randomized_quick_sort
 
-generations("random", 10**4, 0,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
+generations("random", 5, 0,"C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt")
 
 def print_time_memory(func):
     n, data = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/input.txt", 1)
@@ -16,7 +16,6 @@ def print_time_memory(func):
 
     print("memory usage task 1: ", tracemalloc.get_traced_memory()[1] / 2**20, "Mb")
     print("--- %s seconds ---" % (time.time() - start_time))
-    print("\n")
     memory = tracemalloc.get_traced_memory()[1] / 2**20
     times = time.time() - start_time
 
@@ -24,7 +23,8 @@ def print_time_memory(func):
 
     write_data(data, "C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt")
     result = read_data("C:/Users/zabot/.virtualenvs/algorithms-and-data-structures/lab3/task1/txtf/output.txt", 0)
-
+    print(data)
+    print("\n")
     return memory, times, result
 
 
