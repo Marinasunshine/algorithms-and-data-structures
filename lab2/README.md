@@ -4,9 +4,12 @@
 Цель данной лабораторной работы заключается в изучении сортировки слиянием, а также освоении метода декомпозиции (или принципа "Разделяй и властвуй")
 
 ### Задачи ###
-1. Реализовать алгоритмы сортировки
-2. Проверить корректность работы на различных наборах данных
-3. Проанализировать поведение на разных типах данных и массивах разного размера
+* 1 - [Сортировка слиянием](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2/task1)
+* 2 - [Сортировка слиянием+](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2/task2)
+* 3 - [Число инверсий](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2/task3)
+* 4 - [Бинарный поиск](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2/task4)
+* 7 - [Поиск максимального подмассива за линейное время](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2/task7)
+* 9 - [Метод Штрассена для умножения матриц](https://github.com/Marinasunshine/algorithms-and-data-structures/tree/main/lab2/task9)
 
 ### Структура проекта ###
 * src/ - исходный код
