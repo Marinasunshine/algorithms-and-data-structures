@@ -8,8 +8,7 @@
 
 ## Input / Output 
 
-![image](https://github.com/user-attachments/assets/84e23063-d6fc-4f05-8786-652b4a08e477)
-
+![image](https://github.com/user-attachments/assets/6a9e6c16-62ed-457d-8c78-c962f5baf55e)
 
 ## Ограничения по времени и памяти
 
