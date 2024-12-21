@@ -1,5 +1,5 @@
-bur 3
-McCain 4
-bur 1
-Obama 3
-bur 3
+McCain 5
+tourist 3
+ivanov 5
+petr 1
+McCain 3
