@@ -25,6 +25,7 @@ def print_time_memory(func):
     print(data)
     print(func(data))
     print("\n")
+    print("----------------------")
     return memory, times
 
 
